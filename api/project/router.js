@@ -8,7 +8,15 @@ router.get('/', (req, res, next) => {
     .then(projects => {
         res.status(200).json(projects)
     })
+    .catch(next)
 })
 
+router.post('/', (req,res,next) => {
+    helpers.insert(req.body)
+    .then(newProject => {
+        res.status(201).json(newProject);
+    })
+    .catch(next)
+})
 
 module.exports = router;
