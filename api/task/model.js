@@ -32,6 +32,7 @@ function insert(task) {
                     'p.project_description'
                 )
         })
+        
         .then((tasks) =>
         tasks.map((task) => ({
             ...task,

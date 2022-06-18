@@ -11,6 +11,14 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
+router.post('/', (req,res,next) => {
+    helpers.insert(req.body)
+    .then(newTask => {
+        res.status(201).json(newTask[0]);
+    })
+    .catch(next)
+})
+
 
 
 module.exports = router;
