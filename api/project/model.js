@@ -12,7 +12,7 @@ function find() {
    .catch((err) => console.log(err.message))
 }
 
-  const insert = (project) => {
+  function insert(project) {
     return db('projects').insert(project)
     .then(([project_id]) => db('projects').where({project_id}))
     .then((projects) => 
