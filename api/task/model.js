@@ -23,14 +23,8 @@ function find() {
 function insert(task) {
     return db('tasks').insert(task)
         .then(() => {
-            return db('tasks as t')
-                .join(
-                    't.task_description',
-                    't.task_notes',
-                    't.task_completed',
-                    'p.project_name',
-                    'p.project_description'
-                )
+            return db('tasks')
+                
         })
         
         .then((tasks) =>
